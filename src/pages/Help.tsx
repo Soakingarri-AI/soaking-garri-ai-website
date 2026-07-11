@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import FadeInSection from '../components/FadeInSection';
+import { useState } from "react";
+import FadeInSection from "../components/FadeInSection";
 
 const faqs = [
   {
@@ -31,9 +31,9 @@ const faqs = [
 export default function Help() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [formData, setFormData] = useState({
-    name: 'Adeyemi Oladipupo',
-    email: 'adeyemi@soakingarrii.com',
-    message: '',
+    name: "Adeyemi Oladipupo",
+    email: "adeyemi@soakingarrii.com",
+    message: "",
   });
 
   return (
@@ -43,15 +43,28 @@ export default function Help() {
           {/* Hero */}
           <FadeInSection>
             <div className="help-hero">
-              <h1>How can we <span className="highlight">support</span> your journey?</h1>
-              <p>Access our specialized intelligence resources, technical documentation, and expert support channels.</p>
+              <h1>
+                How can we <span className="highlight">support</span> your
+                journey?
+              </h1>
+              <p>
+                Access our specialized intelligence resources, technical
+                documentation, and expert support channels.
+              </p>
             </div>
           </FadeInSection>
 
           {/* Search */}
           <FadeInSection delay={100}>
             <div className="help-search">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <circle cx="11" cy="11" r="8" />
                 <path d="M21 21l-4.35-4.35" />
               </svg>
@@ -65,20 +78,29 @@ export default function Help() {
             <FadeInSection delay={100}>
               <div className="faq-section">
                 <h2>
-                  <span style={{ color: 'var(--amber)', fontSize: '20px' }}>?</span>
+                  <span style={{ color: "var(--amber)", fontSize: "20px" }}>
+                    ?
+                  </span>
                   Frequently Asked Questions
                 </h2>
                 {faqs.map((faq, i) => (
                   <div
                     key={i}
-                    className={`faq-item${openFaq === i ? ' open' : ''}`}
+                    className={`faq-item${openFaq === i ? " open" : ""}`}
                   >
                     <div
                       className="faq-question"
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     >
                       <span>{faq.q}</span>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
                         <path d="M6 9l6 6 6-6" />
                       </svg>
                     </div>
@@ -97,7 +119,9 @@ export default function Help() {
                   <input
                     type="text"
                     value={formData.name}
-                    onChange={e => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     placeholder="Full Name"
                   />
                 </div>
@@ -106,7 +130,9 @@ export default function Help() {
                   <input
                     type="email"
                     value={formData.email}
-                    onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     placeholder="Email Address"
                   />
                 </div>
@@ -114,12 +140,21 @@ export default function Help() {
                   <label>Message</label>
                   <textarea
                     value={formData.message}
-                    onChange={e => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     placeholder="Describe your issue..."
                     rows={5}
                   />
                 </div>
-                <button className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '14px' }}>
+                <button
+                  className="btn-primary"
+                  style={{
+                    width: "100%",
+                    justifyContent: "center",
+                    padding: "14px",
+                  }}
+                >
                   Send Intelligent Inquiry
                 </button>
               </div>
@@ -161,15 +196,15 @@ export default function Help() {
             <div className="tech-gallery">
               <div className="tech-gallery-item">
                 <img src="/Overlay1.png" alt="Technical Excellence" />
-                <div className="tech-gallery-label">Technical Excellence</div>
+                {/* <div className="tech-gallery-label">Technical Excellence</div> */}
               </div>
               <div className="tech-gallery-item">
-                <img src="/Overlay2.png" alt="Real-time Clarity"  />
-                <div className="tech-gallery-label">Real-time Clarity</div>
+                <img src="/Overlay2.png" alt="Real-time Clarity" />
+                {/* <div className="tech-gallery-label">Real-time Clarity</div> */}
               </div>
               <div className="tech-gallery-item">
-                <img src="/Overlay3.png" alt="Glazed Infrastructure"  />
-                <div className="tech-gallery-label">Glazed Infrastructure</div>
+                <img src="/Overlay3.png" alt="Glazed Infrastructure" />
+                {/* <div className="tech-gallery-label">Glazed Infrastructure</div> */}
               </div>
             </div>
           </FadeInSection>
