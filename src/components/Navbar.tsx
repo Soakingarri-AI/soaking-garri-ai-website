@@ -36,8 +36,8 @@ export default function Navbar() {
               <img
                 src="/logo1.png"
                 alt="Soakingarri AI"
-                width="46px"
-                height="30.64px"
+                width="150px"
+                height="auto"
               />
             </div>
           </Link>
