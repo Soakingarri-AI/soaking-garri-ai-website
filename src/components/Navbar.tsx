@@ -33,7 +33,12 @@ export default function Navbar() {
         <div className="nav-inner">
           <Link to="/" className="nav-logo">
             <div className="">
-              <img src="/logo1.png" alt="Soakingarri AI" />
+              <img
+                src="/logo1.png"
+                alt="Soakingarri AI"
+                width="46px"
+                height="30.64px"
+              />
             </div>
           </Link>
 
