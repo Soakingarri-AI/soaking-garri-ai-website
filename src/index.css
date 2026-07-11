@@ -231,7 +231,8 @@ img {
   list-style: none;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-mobile-links a {
   padding: 7px 14px;
   border-radius: 8px;
   font-size: 14px;
@@ -241,16 +242,19 @@ img {
   position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-mobile-links a:hover {
   color: var(--text-primary);
   background: var(--glass);
 }
 
-.nav-links a.active {
+.nav-links a.active,
+.nav-mobile-links a.active {
   color: var(--amber);
 }
 
-.nav-links a.active::after {
+.nav-links a.active::after,
+.nav-mobile-links a.active::after {
   content: '';
   position: absolute;
   bottom: 2px;
