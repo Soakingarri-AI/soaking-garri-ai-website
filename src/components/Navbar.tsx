@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -9,8 +9,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close mobile menu on route change
@@ -19,31 +19,31 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const links = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/pricing', label: 'Pricing' },
-    { to: '/help', label: 'Help' },
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/pricing", label: "Pricing" },
+    { to: "/help", label: "Help" },
   ];
 
-  const isSignup = location.pathname === '/signup';
+  const isSignup = location.pathname === "/signup";
 
   return (
-    <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
+    <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
       <div className="container">
         <div className="nav-inner">
           <Link to="/" className="nav-logo">
             <div className="">
-              <img src="/logo.png" alt="Soakingarri AI" />
+              <img src="/logo1.png" alt="Soakingarri AI" />
             </div>
           </Link>
 
           {/* Desktop links */}
           <ul className="nav-links">
-            {links.map(link => (
+            {links.map((link) => (
               <li key={link.to}>
                 <Link
                   to={link.to}
-                  className={location.pathname === link.to ? 'active' : ''}
+                  className={location.pathname === link.to ? "active" : ""}
                 >
                   {link.label}
                 </Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
           </ul>
 
           <Link to="/signup" className="btn-primary nav-desktop-cta">
-            {isSignup ? 'Login' : 'Get Started'} &rarr;
+            {isSignup ? "Login" : "Get Started"} &rarr;
           </Link>
 
           {/* Mobile hamburger toggle */}
@@ -67,13 +67,13 @@ export default function Navbar() {
         </div>
 
         {/* Mobile dropdown menu */}
-        <div className={`nav-mobile-menu${mobileOpen ? ' open' : ''}`}>
+        <div className={`nav-mobile-menu${mobileOpen ? " open" : ""}`}>
           <ul className="nav-mobile-links">
-            {links.map(link => (
+            {links.map((link) => (
               <li key={link.to}>
                 <Link
                   to={link.to}
-                  className={location.pathname === link.to ? 'active' : ''}
+                  className={location.pathname === link.to ? "active" : ""}
                 >
                   {link.label}
                 </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
             ))}
           </ul>
           <Link to="/signup" className="btn-primary nav-mobile-cta">
-            {isSignup ? 'Login' : 'Get Started'} &rarr;
+            {isSignup ? "Login" : "Get Started"} &rarr;
           </Link>
         </div>
       </div>
