@@ -165,6 +165,7 @@ img {
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   transition: all 0.3s ease;
+  padding: 12px 0;
 }
 
 .navbar.scrolled {
@@ -177,19 +178,24 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-
+  min-height: 74px; /* ensures the row itself has enough height for the logo to breathe */
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: 0.5px;
+  
 }
+
+.nav-logo-box {
+  position: relative;
+  width: 100px;   /* keep this the same as your ORIGINAL logo width, so layout doesn't shift */
+  height: 40px;   /* match your original logo's rendered height */
+  overflow: visible; /* allow the image to spill outside this box */
+  display: flex;
+  align-items: center;
+}
+
 
 .nav-logo .logo-icon {
   width: 36px;
@@ -201,6 +207,16 @@ img {
   justify-content: center;
   background: rgba(16, 185, 129, 0.1);
   flex-shrink: 0;
+}
+
+.nav-logo-box img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(1.6); /* scale up visually — adjust 1.6 to taste */
+  transform-origin: left center;
+  width: 150px; /* your desired bigger size */
+  height: auto;
 }
 
 .nav-logo .logo-icon svg {
@@ -1478,8 +1494,9 @@ img {
 .footer-brand p {
   font-size: 13px;
   color: var(--text-muted);
-  margin-top: 12px;
+  margin-top: 35px;
   line-height: 1.6;
+  margin-right: "100%"
 }
 
 .footer-col h4 {

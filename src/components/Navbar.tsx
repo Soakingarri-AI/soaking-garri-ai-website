@@ -13,11 +13,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location.pathname]);
-
   const links = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
@@ -26,23 +21,18 @@ export default function Navbar() {
   ];
 
   const isSignup = location.pathname === "/signup";
+  const closeMobileMenu = () => setMobileOpen(false);
 
   return (
     <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
       <div className="container">
         <div className="nav-inner">
-          <Link to="/" className="nav-logo">
-            <div className="">
-              <img
-                src="/logo1.png"
-                alt="Soakingarri AI"
-                width="150px"
-                height="auto"
-              />
+          <Link to="/" className="nav-logo" onClick={closeMobileMenu}>
+            <div className="nav-logo-box">
+              <img src="/logo1.png" alt="Soakingarri AI" />
             </div>
           </Link>
 
-          {/* Desktop links */}
           <ul className="nav-links">
             {links.map((link) => (
               <li key={link.to}>
@@ -60,7 +50,6 @@ export default function Navbar() {
             {isSignup ? "Login" : "Get Started"} &rarr;
           </Link>
 
-          {/* Mobile hamburger toggle */}
           <button
             className="nav-toggle"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -71,7 +60,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile dropdown menu */}
         <div className={`nav-mobile-menu${mobileOpen ? " open" : ""}`}>
           <ul className="nav-mobile-links">
             {links.map((link) => (
@@ -79,13 +67,18 @@ export default function Navbar() {
                 <Link
                   to={link.to}
                   className={location.pathname === link.to ? "active" : ""}
+                  onClick={closeMobileMenu}
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <Link to="/signup" className="btn-primary nav-mobile-cta">
+          <Link
+            to="/signup"
+            className="btn-primary nav-mobile-cta"
+            onClick={closeMobileMenu}
+          >
             {isSignup ? "Login" : "Get Started"} &rarr;
           </Link>
         </div>

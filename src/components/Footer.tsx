@@ -27,12 +27,11 @@ export default function Footer() {
           <div className="footer-brand">
             <div className="nav-logo" style={{ marginBottom: "12px" }}>
               <div className="">
-                <img
-                  src="/logo1.png"
-                  alt="Soakingarri AI"
-                  width="150px"
-                  height="auto"
-                />
+                <Link to="/" className="nav-logo">
+                  <div className="nav-logo-box">
+                    <img src="/logo1.png" alt="Soakingarri AI" />
+                  </div>
+                </Link>
               </div>
             </div>
             <p>
