@@ -12,7 +12,7 @@ export default function About() {
               <FadeInSection>
                 <h1>
                   About{" "}
-                  <span style={{ color: "var(--amber)" }}>SAOKINGARRI AI</span>
+                  <span style={{ color: "var(--amber)" }}>SOAKINGARRI AI</span>
                 </h1>
               </FadeInSection>
 
