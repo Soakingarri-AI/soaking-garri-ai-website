@@ -29,7 +29,7 @@ export default function Footer() {
               <div className="">
                 <Link to="/" className="nav-logo">
                   <div className="nav-logo-box">
-                    <img src="/logo.png" alt="Soakingarri AI" />
+                    <img src="/logo1.png" alt="Soakingarri AI" />
                   </div>
                 </Link>
               </div>
