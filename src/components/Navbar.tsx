@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="nav-inner">
           <Link to="/" className="nav-logo" onClick={closeMobileMenu}>
             <div className="nav-logo-box">
-              <img src="/logo1.png" alt="Soakingarri AI" />
+              <img src="/logobg.png" alt="Soakingarri AI" />
             </div>
           </Link>
 
