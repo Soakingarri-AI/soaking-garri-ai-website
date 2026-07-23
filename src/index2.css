@@ -796,6 +796,16 @@ h1, h2, h3, h4, h5, h6 {
   animation: floatY 7s ease-in-out infinite;
 }
 
+.about-phone-img {
+  transform-origin: center center;
+  transition: transform 0.5s ease;
+}
+
+.about-phone-wrap:hover .about-phone-img {
+  transform: translateY(-12px) rotate(1deg);
+  filter: drop-shadow(0 28px 70px rgba(16, 185, 129, 0.3));
+}
+
 /* ===== HELP SECTION ===== */
 .help-section {
   padding: 140px 0 100px;

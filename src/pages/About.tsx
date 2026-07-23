@@ -60,10 +60,11 @@ export default function About() {
 
             {/* RIGHT: Phone */}
             <FadeInSection delay={100} className="">
-              <div className="about-phone-wrap">
+              <div className="about-phone-wrap fade-in-right">
                 <img
                   src="/about.png"
                   alt="SAOKINGARRI AI Chat Conversation Interface"
+                  className="about-phone-img"
                   style={{
                     borderRadius: "0",
                     background: "transparent",
