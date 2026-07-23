@@ -1,181 +1,216 @@
-import { Link } from "react-router-dom";
-import FadeInSection from "../components/FadeInSection";
+import { useState } from "react";
 
-const features = [
+import FadeInSection from "../components/FadeInSection";
+import {
+  MessageSquare,
+  Settings,
+  Puzzle,
+  BookOpen,
+  Users,
+  Image,
+} from "lucide-react";
+
+const tools = [
   {
-    title: "Welcome to Soakingarri AI",
-    desc: "Your intelligent companion for Business, Finance, Learning, and Productivity.",
-    img: "/robot-welcome.png",
-    glow: "rgba(59,130,246,0.3)",
-    glowColor: "#3b82f6",
+    title: "Ask SoakinGarri",
+    icon: MessageSquare,
+    desc: "Your everyday AI assistant with deep knowledge of Africa's history, culture, science, business, technology, and education. Ask questions, solve problems, learn new skills, conduct research, generate ideas, and get intelligent guidance tailored to African realities and opportunities.",
   },
   {
-    title: "Smarter Finance",
-    desc: "Track expenses, budgets, and business growth with AI.",
-    img: "/robot-finance.png",
-    glow: "rgba(245,158,11,0.3)",
-    glowColor: "#F59E0B",
+    title: "Factorizer",
+    icon: Settings,
+    desc: "Turn manufacturing dreams into reality. Factorizer helps entrepreneurs, investors, governments, and businesses understand the technical know how to assemble the machines required to have a fully running factory for different products, from food processing to electronics, to machines and etc. Factorizer provides practical pathways to industrial growth, through small, to medium and large factories.",
   },
   {
-    title: "Built for Africa",
-    desc: "Understands local business and African realities.",
-    img: "/robot-africa.png",
-    glow: "rgba(16,185,129,0.3)",
-    glowColor: "#10B981",
+    title: "InfiniteParts",
+    icon: Puzzle,
+    desc: "Design and discover machine components with ease. InfiniteParts helps engineers, inventors, manufacturers, and makers generate production-ready parts, explore mechanical designs, and create components suitable for CNC machining, 3D printing, fabrication, and industrial production.",
+  },
+  {
+    title: "ExamFlow",
+    icon: BookOpen,
+    desc: "The intelligent study companion for African students. ExamFlow helps learners prepare for Common Entrance, Junior WAEC, Senior WAEC, NECO, JAMB, and other examinations through practice questions, personalized learning plans, adaptive testing, performance analysis, and exam-focused guidance.",
+  },
+  {
+    title: "AfroSimulator",
+    icon: Users,
+    desc: "Experience dynamic conversations between diverse African perspectives through a simulation of chatbots. AfroSimulator features culturally distinct AI personalities inspired by different African communities, allowing users to explore ideas, cultural viewpoints, and collaborative problem-solving through realistic AI-driven discussions.",
+  },
+  {
+    title: "Meme Generator",
+    icon: Image,
+    desc: "Create funny, shareable contents based on socio-cultural content in seconds. Powered by the SoakinGarri meme engine.",
   },
 ];
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      await fetch("https://formsubmit.co/soakingarri@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({ email }),
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
+
+    setSubmitted(true);
+    setEmail("");
+  };
+
   return (
     <div className="page-wrapper">
       {/* ===== HERO ===== */}
       <section className="hero-section">
         <div className="container">
-          <div className="hero-grid">
-            {/* LEFT: Text content */}
-            <div className="hero-left">
+          <div className="hero-content">
+            <FadeInSection>
+              <div className="hero-badge">Coming Soon</div>
               <h1 className="hero-title">
-                Welcome to <span className="gradient-text">SOAKINGARRI AI</span>
-                <br />
-                The Knowledge Starship
+                SOAKINGARRI <span>AI</span>
               </h1>
+              <p className="hero-tagline">Designed to Solve Real Problems</p>
               <p className="hero-desc">
-                Step into a new era of digital intelligence where artificial
-                minds and human curiosity unite. <strong>SOAKINGARRI AI</strong>{" "}
-                isn't just another assistant — it's a starship of knowledge,
-                navigating galaxies of data to empower learning, business, and
-                innovation.
-                <br />
-                <br />
-                Here, <em>artificial intelligence meets emotional insight</em>,
-                transforming how people explore ideas, make decisions, and
-                connect with information. From education to finance,{" "}
-                <strong>SOAKINGARRI AI</strong> redefines discovery turning
-                every conversation into a journey through the cosmos of
-                understanding.
+                SoakinGarri AI is a platform built by Africans for Africans,
+                created to solve real-world challenges through practical
+                knowledge, innovation, and technology. Whether you&apos;re a
+                student preparing for exams, an entrepreneur launching a
+                business, an engineer building products, or a company looking to
+                manufacture locally, SoakinGarri AI provides the guidance,
+                expertise, and tools needed to transform your ideas and raw
+                materials into finished products, and machines, and thriving
+                factories, by simplifying complex processes.
               </p>
-              <div className="hero-cta">
-                <Link to="#features" className="btn-emerald">
-                  Explore the features
-                </Link>
-                <Link to="/signup" className="btn-primary">
-                  Get Started &rarr;
-                </Link>
-              </div>
-            </div>
-
-            {/* RIGHT: Phone mockup */}
-            <div className="hero-image-wrap">
-              <img
-                src="/hero-phone.png"
-                alt="SOAKINGARRI AI Chat Interface on mobile"
-              />
-            </div>
+              <p className="hero-mission">
+                Our mission is simple:{" "}
+                <strong>
+                  Empower Africans to build, create, manufacture, innovate, and
+                  solve their challenges, using locally accessible knowledge and
+                  AI.
+                </strong>
+              </p>
+            </FadeInSection>
           </div>
         </div>
       </section>
 
-      {/* ===== TRUSTED BY ===== */}
-      <FadeInSection>
-        <section className="trusted-section">
-          <div className="trusted-marquee">
-            <div className="trusted-track">
-              {/* First set */}
-
-              <span className="trusted-logo-item">
-                <img src="/Booksy.png" alt="Booksy" />
-              </span>
-              <span className="trusted-logo-item">
-                <img src="/NYU.png" alt="NYU" />
-              </span>
-              <span className="trusted-logo-item">
-                <img src="/cornell.png" alt="Cornell University" />
-              </span>
-              <span className="trusted-logo-item">
-                <img src="/DK.png" alt="DK" />
-              </span>
-              <span className="trusted-logo-item">
-                <img src="/university.png" alt="University of Minnesota" />
-              </span>
-              {/* Duplicate set for seamless loop */}
-              <span className="trusted-logo-item">
-                <img src="/Booksy.png" alt="Booksy" />
-              </span>
-              <span className="trusted-logo-item">
-                <img src="/NYU.png" alt="NYU" />
-              </span>
-              <span className="trusted-logo-item">
-                <img src="/cornell.png" alt="Cornell University" />
-              </span>
-              <span className="trusted-logo-item">
-                <img src="/DK.png" alt="DK" />
-              </span>
-              <span className="trusted-logo-item">
-                <img src="/university.png" alt="University of Minnesota" />
-              </span>
-            </div>
-          </div>
-          <span className="trusted-label">
-            Trusted by innovative teams worldwide
-          </span>
-        </section>
-      </FadeInSection>
-
-      {/* ===== FEATURES ===== */}
-      <section id="features" className="features-section">
+      {/* ===== TOOLS ===== */}
+      <section className="tools-section">
         <div className="container">
-          <div className="features-grid">
-            {features.map((f, i) => (
-              <FadeInSection key={f.title} delay={i * 150}>
-                <div className="feature-card">
-                  {/* Title + desc ABOVE the robot image — matching Figma */}
-                  <h3>{f.title}</h3>
-                  <p
-                    style={{
-                      marginBottom: "28px",
-                      fontSize: "16px",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {f.desc}
-                  </p>
+          <FadeInSection>
+            <div className="section-header">
+              <h2>Our AI Tools</h2>
+              <p>
+                Powerful, purpose-built tools designed for African innovation,
+                education, and manufacturing.
+              </p>
+            </div>
+          </FadeInSection>
 
-                  <div className="feature-robot-wrap">
-                    <img
-                      src={f.img}
-                      alt={f.title}
-                      style={{ filter: `drop-shadow(0 0 28px ${f.glow})` }}
-                    />
-                    {/* Bottom glow pulse ring */}
-                    <div
-                      style={{
-                        position: "absolute",
-                        bottom: "-8px",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        width: "80px",
-                        height: "16px",
-                        borderRadius: "50%",
-                        background: f.glowColor,
-                        opacity: 0.25,
-                        filter: "blur(8px)",
-                      }}
+          <div className="tools-grid">
+            {tools.map((tool, i) => {
+              const Icon = tool.icon;
+              return (
+                <FadeInSection key={tool.title} delay={i * 100}>
+                  <div className="tool-card">
+                    <div className="tool-icon">
+                      <Icon size={26} />
+                    </div>
+                    <h3>{tool.title}</h3>
+                    <p>{tool.desc}</p>
+                  </div>
+                </FadeInSection>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== LAUNCHING ===== */}
+      <section className="launching-section">
+        <div className="container">
+          <FadeInSection>
+            <div className="launching-card">
+              <h2>Launching Soon</h2>
+              <p>
+                We are working hard to bring these powerful tools to life. As
+                development progresses, each tool will become available to the
+                public and continue to grow with new features, knowledge, and
+                capabilities.
+              </p>
+              <p className="launching-highlight">
+                The future of African innovation, education, manufacturing, and
+                entrepreneurship is being built right now.
+              </p>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ===== WAITLIST ===== */}
+      <section className="waitlist-section">
+        <div className="container">
+          <FadeInSection>
+            <div className="waitlist-card">
+              <h2>Join the Waitlist</h2>
+              <p>
+                Join the waitlist today and be among the first to experience
+                SoakinGarri AI.
+              </p>
+              <p className="waitlist-sub">
+                Stay updated on launch announcements, early access.
+              </p>
+              {submitted ? (
+                <div className="waitlist-confirmation">
+                  <p>You're on the list!</p>
+                  <p>
+                    Thank you for joining. We&apos;ll keep you updated on launch
+                    announcements and early access.
+                  </p>
+                </div>
+              ) : (
+                <form
+                  className="waitlist-form"
+                  onSubmit={handleSubmit}
+                >
+                  <div className="waitlist-input-wrap">
+                    <span className="waitlist-input-icon">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
+                    </span>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email to join the waitlist"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                   </div>
-                </div>
-              </FadeInSection>
-            ))}
-          </div>
-
-          <FadeInSection delay={300}>
-            <div className="feature-cta-row">
-              <Link
-                to="/signup"
-                className="btn-primary"
-                style={{ padding: "14px 48px", fontSize: "16px" }}
-              >
-                Get Started &rarr;
-              </Link>
+                  <button type="submit" className="btn-waitlist">
+                    Join Waitlist
+                  </button>
+                </form>
+              )}
             </div>
           </FadeInSection>
         </div>

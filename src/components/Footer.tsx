@@ -56,7 +56,10 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2024 Soakingarri AI. Precision in Intelligence.</span>
+          <span>
+            © {new Date().getFullYear()} Soakingarri AI. Precision in
+            Intelligence.
+          </span>
           <div className="footer-bottom-links">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>

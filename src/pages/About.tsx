@@ -17,20 +17,23 @@ export default function About() {
               </FadeInSection>
 
               <FadeInSection delay={100}>
+                <p>Designed to Solve Real Problems</p>
                 <p>
-                  SoakingarriAI is a next-generation intelligent assistant
-                  designed to transform how people learn, analyze, and create.
-                </p>
-                <p>
-                  Born from the fusion of artificial intelligence and human
-                  curiosity, it serves as a digital companion that guides users
-                  through galaxies of knowledge from finance and education to
-                  business strategy and innovation.
+                  SoakinGarri AI is a platform built by Africans for Africans,
+                  created to solve real-world challenges through practical
+                  knowledge, innovation, and technology. Whether you're a
+                  student preparing for exams, an entrepreneur launching a
+                  business, an engineer building products, or a company looking
+                  to manufacture locally, SoakinGarri AI provides the guidance,
+                  expertise, and tools needed to transform your ideas and raw
+                  materials into finished products, and machines, and thriving
+                  factories, by simplifying complex processes.
                 </p>
                 <p>
                   <strong>
-                    Our mission: To make exploration effortless and
-                    understanding limitless.
+                    Our mission is simple: Empower Africans to build, create,
+                    manufacture, innovate, and solve their challenges, using
+                    locally accessible knowledge and AI.
                   </strong>{" "}
                   With every conversation, SoakingarriAI learns, adapts, and
                   evolves helping individuals and organizations make smarter
@@ -59,7 +62,7 @@ export default function About() {
             <FadeInSection delay={100} className="">
               <div className="about-phone-wrap">
                 <img
-                  src="/about-phone.png"
+                  src="/about.png"
                   alt="SAOKINGARRI AI Chat Conversation Interface"
                   style={{
                     borderRadius: "0",
