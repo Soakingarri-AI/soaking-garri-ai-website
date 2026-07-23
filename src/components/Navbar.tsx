@@ -13,7 +13,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = [
+  const links: { to: string; label: string; external?: boolean }[] = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/pricing", label: "Pricing" },
@@ -39,6 +39,8 @@ export default function Navbar() {
                 <Link
                   to={link.to}
                   className={location.pathname === link.to ? "active" : ""}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -68,6 +70,8 @@ export default function Navbar() {
                   to={link.to}
                   className={location.pathname === link.to ? "active" : ""}
                   onClick={closeMobileMenu}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                 >
                   {link.label}
                 </Link>

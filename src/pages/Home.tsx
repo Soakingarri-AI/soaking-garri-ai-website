@@ -134,7 +134,6 @@ export default function Home() {
                     style={{
                       marginBottom: "28px",
                       fontSize: "16px",
-                      fontFamily: "Inter",
                       fontWeight: "500",
                     }}
                   >

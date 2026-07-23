@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap');
 
 
 
@@ -29,7 +29,8 @@
   --glass-hover: rgba(255, 255, 255, 0.08);
   --shadow-amber: rgba(245, 158, 11, 0.3);
   --shadow-emerald: rgba(16, 185, 129, 0.3);
-  --font-primary: 'Outfit', 'Inter', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-display: 'Sora', sans-serif;
 }
 
 
@@ -39,7 +40,7 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-inter);
 
   color: var(--text-primary);
   line-height: 1.6;
@@ -67,11 +68,15 @@ a {
 
 button {
   cursor: pointer;
-  font-family: var(--font-primary);
+  font-family: var(--font-inter);
 }
 
 img {
   max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
 /* ===== SCROLLBAR ===== */
@@ -832,7 +837,7 @@ img {
   border-radius: 12px;
   color: var(--text-primary);
   font-size: 15px;
-  font-family: var(--font-primary);
+  font-family: var(--font-inter);
   outline: none;
   transition: border-color 0.2s;
 }
@@ -951,7 +956,7 @@ img {
   border-radius: 10px;
   color: var(--text-primary);
   font-size: 14px;
-  font-family: var(--font-primary);
+  font-family: var(--font-inter);
   outline: none;
   transition: border-color 0.2s;
 }
@@ -1458,7 +1463,7 @@ img {
   color: var(--text-primary);
   cursor: pointer;
   transition: all 0.2s;
-  font-family: var(--font-primary);
+  font-family: var(--font-inter);
 }
 
 .social-btn:hover {
@@ -1481,6 +1486,261 @@ img {
   text-decoration: underline;
 }
 
+/* ===== PRIVACY ===== */
+.privacy-section {
+  padding: 120px 0 100px;
+}
+
+.privacy-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.privacy-header {
+  text-align: center;
+  margin-bottom: 64px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.privacy-header h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.privacy-header h1 span {
+  color: var(--amber);
+}
+
+.privacy-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.privacy-effective {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.privacy-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.privacy-block {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.privacy-block:last-child {
+  border-bottom: none;
+}
+
+.privacy-block h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.privacy-block h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: var(--amber);
+}
+
+.privacy-block p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 16px;
+  max-width: 720px;
+}
+
+.privacy-block p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-block ul {
+  list-style: disc;
+  margin: 12px 0 20px 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.privacy-block ul li {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: 6px;
+}
+
+.privacy-block.highlight {
+  background: rgba(245, 158, 11, 0.04);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  margin: 24px 0;
+  border-bottom: none;
+}
+
+.privacy-block.highlight h3 {
+  color: var(--amber);
+}
+
+.privacy-block.highlight p {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .privacy-block {
+    padding: 28px 0;
+  }
+
+  .privacy-block.highlight {
+    padding: 24px;
+    margin: 16px 0;
+    border-radius: 12px;
+  }
+}
+
+/* ===== TERMS ===== */
+.terms-section {
+  padding: 120px 0 100px;
+}
+
+.terms-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.terms-header {
+  text-align: center;
+  margin-bottom: 64px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.terms-header h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.terms-header h1 span {
+  color: var(--amber);
+}
+
+.terms-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.terms-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terms-block {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.terms-block:last-child {
+  border-bottom: none;
+}
+
+.terms-block h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.terms-block h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: var(--amber);
+}
+
+.terms-block p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 16px;
+  max-width: 720px;
+}
+
+.terms-block p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-block ul {
+  list-style: disc;
+  margin: 12px 0 20px 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.terms-block ul li {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: 6px;
+}
+
+.terms-block.highlight {
+  background: rgba(245, 158, 11, 0.04);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  margin: 24px 0;
+  border-bottom: none;
+}
+
+.terms-block.highlight h3 {
+  color: var(--amber);
+}
+
+.terms-block.highlight p {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .terms-block {
+    padding: 28px 0;
+  }
+
+  .terms-block.highlight {
+    padding: 24px;
+    margin: 16px 0;
+    border-radius: 12px;
+  }
+}
+
+
 /* ===== FOOTER ===== */
 .footer {
   background: rgba(0, 0, 0, 0.3);
@@ -1500,7 +1760,6 @@ img {
   color: var(--text-muted);
   margin-top: 35px;
   line-height: 1.6;
-  margin-right: "100%"
 }
 
 .footer-col h4 {

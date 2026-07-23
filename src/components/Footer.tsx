@@ -10,8 +10,8 @@ const footerLinks = {
     { label: "API", to: "#" },
   ],
   Legal: [
-    { label: "Privacy Policy", to: "#" },
-    { label: "Terms", to: "#" },
+    { label: "Privacy Policy", to: "/privacy" },
+    { label: "Terms", to: "/terms" },
   ],
   Connect: [
     { label: "Twitter", to: "#" },
@@ -58,8 +58,8 @@ export default function Footer() {
         <div className="footer-bottom">
           <span>© 2024 Soakingarri AI. Precision in Intelligence.</span>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Service</Link>
             <a href="#">Cookie Policy</a>
           </div>
         </div>

@@ -7,6 +7,8 @@ import About from './pages/About';
 import Pricing from './pages/Pricing';
 import Help from './pages/Help';
 import Signup from './pages/Signup';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 function StarBackground() {
   return (
@@ -48,6 +50,8 @@ function AppLayout() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/help" element={<Help />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </main>
       <Footer />
