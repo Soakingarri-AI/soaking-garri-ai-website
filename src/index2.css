@@ -49,9 +49,10 @@ body {
 
   /* Background image setup */
   background-image:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.7) 100%),
+    radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.06) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.72) 100%),
     url('/bg.png');
-  background-color: var(--navy);
+  background-color: #050505;
   /* fallback while image loads */
   background-size: cover;
   background-position: center;
@@ -166,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   z-index: 1000;
   padding: 14px 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   transition: all 0.3s ease;
@@ -175,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar.scrolled {
   padding: 10px 0;
-  background: rgba(15, 23, 42, 0.97);
+  background: rgba(0, 0, 0, 0.97);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -194,13 +195,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-logo-box {
   position: relative;
-  width: 100px;   /* keep this the same as your ORIGINAL logo width, so layout doesn't shift */
-  height: 40px;   /* match your original logo's rendered height */
-  overflow: visible; /* allow the image to spill outside this box */
+  width: 200px;
+  height: 80px;
+  overflow: visible;
   display: flex;
   align-items: center;
 }
 
+.nav-logo-box img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+}
 
 .nav-logo .logo-icon {
   width: 36px;
@@ -212,16 +221,6 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   background: rgba(16, 185, 129, 0.1);
   flex-shrink: 0;
-}
-
-.nav-logo-box img {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%) scale(1.6); /* scale up visually — adjust 1.6 to taste */
-  transform-origin: left center;
-  width: 150px; /* your desired bigger size */
-  height: auto;
 }
 
 .nav-logo .logo-icon svg {

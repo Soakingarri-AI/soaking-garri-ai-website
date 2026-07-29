@@ -16,8 +16,8 @@ export default function Navbar() {
   const links: { to: string; label: string; external?: boolean }[] = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
-    { to: "/pricing", label: "Pricing" },
-    { to: "/help", label: "Help" },
+    // { to: "/pricing", label: "Pricing" },
+    // { to: "/help", label: "Help" },
   ];
 
   const isSignup = location.pathname === "/signup";

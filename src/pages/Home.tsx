@@ -68,6 +68,63 @@ export default function Home() {
 
   return (
     <div className="page-wrapper">
+      {/* ===== WAITLIST ===== */}
+      <section className="waitlist-section">
+        <div className="container">
+          <FadeInSection>
+            <div className="waitlist-card">
+              <h2>Join the Waitlist</h2>
+              <p>
+                Join the waitlist today and be among the first to experience
+                SoakinGarri AI.
+              </p>
+              <p className="waitlist-sub">
+                Stay updated on launch announcements, early access.
+              </p>
+              {submitted ? (
+                <div className="waitlist-confirmation">
+                  <p>You're on the list!</p>
+                  <p>
+                    Thank you for joining. We&apos;ll keep you updated on launch
+                    announcements and early access.
+                  </p>
+                </div>
+              ) : (
+                <form className="waitlist-form" onSubmit={handleSubmit}>
+                  <div className="waitlist-input-wrap">
+                    <span className="waitlist-input-icon">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
+                    </span>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email to join the waitlist"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <button type="submit" className="btn-waitlist">
+                    Join Waitlist
+                  </button>
+                </form>
+              )}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
       {/* ===== HERO ===== */}
       <section className="hero-section">
         <div className="container">
@@ -150,67 +207,6 @@ export default function Home() {
                 The future of African innovation, education, manufacturing, and
                 entrepreneurship is being built right now.
               </p>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
-      {/* ===== WAITLIST ===== */}
-      <section className="waitlist-section">
-        <div className="container">
-          <FadeInSection>
-            <div className="waitlist-card">
-              <h2>Join the Waitlist</h2>
-              <p>
-                Join the waitlist today and be among the first to experience
-                SoakinGarri AI.
-              </p>
-              <p className="waitlist-sub">
-                Stay updated on launch announcements, early access.
-              </p>
-              {submitted ? (
-                <div className="waitlist-confirmation">
-                  <p>You're on the list!</p>
-                  <p>
-                    Thank you for joining. We&apos;ll keep you updated on launch
-                    announcements and early access.
-                  </p>
-                </div>
-              ) : (
-                <form
-                  className="waitlist-form"
-                  onSubmit={handleSubmit}
-                >
-                  <div className="waitlist-input-wrap">
-                    <span className="waitlist-input-icon">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                        <polyline points="22,6 12,13 2,6" />
-                      </svg>
-                    </span>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email to join the waitlist"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <button type="submit" className="btn-waitlist">
-                    Join Waitlist
-                  </button>
-                </form>
-              )}
             </div>
           </FadeInSection>
         </div>

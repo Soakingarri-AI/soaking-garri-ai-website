@@ -48,7 +48,7 @@ export default function About() {
 
               <FadeInSection delay={200}>
                 <div className="hero-cta" style={{ marginTop: "36px" }}>
-                  <Link to="#" className="btn-emerald">
+                  <Link to="/#tools" className="btn-emerald">
                     Explore the features
                   </Link>
                   <Link to="/signup" className="btn-primary">
@@ -62,7 +62,7 @@ export default function About() {
             <FadeInSection delay={100} className="">
               <div className="about-phone-wrap fade-in-right">
                 <img
-                  src="/about.png"
+                  src="/aboutimg.png"
                   alt="SAOKINGARRI AI Chat Conversation Interface"
                   className="about-phone-img"
                   style={{
