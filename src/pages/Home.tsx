@@ -140,10 +140,10 @@ export default function Home() {
                 created to solve real-world challenges through practical
                 knowledge, innovation, and technology. Whether you&apos;re a
                 student preparing for exams, an entrepreneur launching a
-                business, an engineer building products, or a company looking to
+                factory, an engineer building products, or a company looking to
                 manufacture locally, SoakinGarri AI provides the guidance,
                 expertise, and tools needed to transform your ideas and raw
-                materials into finished products, and machines, and thriving
+                materials into finished products, machines, and thriving
                 factories, by simplifying complex processes.
               </p>
               <p className="hero-mission">
