@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 const footerLinks = {
   Company: [
     { label: "About Us", to: "/about" },
-    { label: "Careers", to: "#" },
+    // { label: "Careers", to: "#" },
   ],
-  Product: [
-    { label: "Pricing", to: "/pricing" },
-    { label: "API", to: "#" },
-  ],
+  // Product: [
+  //   { label: "Pricing", to: "/pricing" },
+  //   { label: "API", to: "#" },
+  // ],
   Legal: [
     { label: "Privacy Policy", to: "/privacy" },
     { label: "Terms", to: "/terms" },
   ],
-  Connect: [
-    { label: "Twitter", to: "#" },
-    { label: "LinkedIn", to: "#" },
-  ],
+  // Connect: [
+  //   { label: "Twitter", to: "#" },
+  //   { label: "LinkedIn", to: "#" },
+  // ],
 };
 
 export default function Footer() {
