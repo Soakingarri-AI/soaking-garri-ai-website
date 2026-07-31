@@ -1,31 +1,53 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import FadeInSection from '../components/FadeInSection';
+// import { useState } from 'react';
+// import { Link } from 'react-router-dom';
+import { useState } from "react";
+import FadeInSection from "../components/FadeInSection";
 
 const leftFeatures = [
   {
-    title: 'Advanced Reasoning',
-    desc: 'Deep analytical structures designed for high-stakes decision making.',
-    image: '/ad.png',
+    title: "Advanced Reasoning",
+    desc: "Deep analytical structures designed for high-stakes decision making.",
+    image: "/ad.png",
   },
   {
-    title: 'Enterprise Security',
-    desc: 'Multi-layered encryption with enterprise-grade privacy standards.',
-    image: '/en.png',
+    title: "Enterprise Security",
+    desc: "Multi-layered encryption with enterprise-grade privacy standards.",
+    image: "/en.png",
   },
   {
-    title: 'Liquid Latency',
-    desc: 'Real-time responses designed for human-AI collaboration.',
-    image: '/li.png',
+    title: "Liquid Latency",
+    desc: "Real-time responses designed for human-AI collaboration.",
+    image: "/li.png",
   },
 ];
 
 export default function Signup() {
-  const [form, setForm] = useState({
-    name: 'Max Rivera',
-    email: 'sales@soakingarri.ai',
-    password: '••••••',
-  });
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      await fetch("https://formsubmit.co/soakingarri@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({ email }),
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
+
+    setSubmitted(true);
+    setEmail("");
+  };
+  // const [form, setForm] = useState({
+  //   name: 'Max Rivera',
+  //   email: 'sales@soakingarri.ai',
+  //   password: '••••••',
+  // });
 
   return (
     <div className="page-wrapper">
@@ -36,20 +58,21 @@ export default function Signup() {
             <div className="signup-left">
               <FadeInSection>
                 <div className="signup-badge">
-                    <div className="signup-avatars">
-    <img src="avater1.png" alt="" className="signup-avatar" />
-    <img src="avater2.png" alt="" className="signup-avatar" />
-    <img src="avater3.png" alt="" className="signup-avatar" />
-  </div>
-  <span className="signup-badge-text">Join 50+ users</span>
-</div>
+                  <div className="signup-avatars">
+                    <img src="avater1.png" alt="" className="signup-avatar" />
+                    <img src="avater2.png" alt="" className="signup-avatar" />
+                    <img src="avater3.png" alt="" className="signup-avatar" />
+                  </div>
+                  <span className="signup-badge-text">Join 50+ users</span>
+                </div>
                 <h1>
                   The <span className="gradient-text">Knowledge Starship</span>
                 </h1>
-                <p  style={{color:'#ffffff'}}>
-                  Experience the "Quiet Expert." SOAKINGARRI AI processes complex
-                  datasets into refined, actionable insights with unprecedented
-                  speed and accuracy. Perfect for advance learning.
+                <p style={{ color: "#ffffff" }}>
+                  Experience the "Quiet Expert." SOAKINGARRI AI processes
+                  complex datasets into refined, actionable insights with
+                  unprecedented speed and accuracy. Perfect for advance
+                  learning.
                 </p>
               </FadeInSection>
 
@@ -57,13 +80,11 @@ export default function Signup() {
                 <div className="feature-list">
                   {leftFeatures.map((f, i) => (
                     <div key={i} className="feature-list-item">
-                     <img src={f.image} alt={f.title} />
+                      <img src={f.image} alt={f.title} />
                       <div>
-                        
-                          
-                          <h4>{f.title}</h4>
-                       
-                        <p className=''>{f.desc}</p>
+                        <h4>{f.title}</h4>
+
+                        <p className="">{f.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -72,7 +93,64 @@ export default function Signup() {
             </div>
 
             {/* RIGHT: Signup Card */}
-            <FadeInSection delay={100}>
+            {/* ===== WAITLIST ===== */}
+            <section className="waitlist-section">
+              <div className="container">
+                <FadeInSection>
+                  <div className="waitlist-card">
+                    <h2>Join the Waitlist</h2>
+                    <p>
+                      Join the waitlist today and be among the first to
+                      experience SoakinGarri AI.
+                    </p>
+                    <p className="waitlist-sub">
+                      Stay updated on launch announcements, early access.
+                    </p>
+                    {submitted ? (
+                      <div className="waitlist-confirmation">
+                        <p>You're on the list!</p>
+                        <p>
+                          Thank you for joining. We&apos;ll keep you updated on
+                          launch announcements and early access.
+                        </p>
+                      </div>
+                    ) : (
+                      <form className="waitlist-form" onSubmit={handleSubmit}>
+                        <div className="waitlist-input-wrap">
+                          <span className="waitlist-input-icon">
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                              <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                          </span>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email to join the waitlist"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                          />
+                        </div>
+                        <button type="submit" className="btn-waitlist">
+                          Join Waitlist
+                        </button>
+                      </form>
+                    )}
+                  </div>
+                </FadeInSection>
+              </div>
+            </section>
+            {/* <FadeInSection delay={100}>
               <div className="signup-card">
                 <h2>Create your account</h2>
                 <p className="sub">Enter your details to begin the journey.</p>
@@ -141,7 +219,7 @@ export default function Signup() {
                   <Link to="#">Privacy Policy</Link>.
                 </p>
               </div>
-            </FadeInSection>
+            </FadeInSection> */}
           </div>
         </div>
       </section>

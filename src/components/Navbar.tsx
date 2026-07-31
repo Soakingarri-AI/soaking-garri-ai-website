@@ -49,7 +49,9 @@ export default function Navbar() {
           </ul>
 
           <Link to="/signup" className="btn-primary nav-desktop-cta">
-            {isSignup ? "Login" : "Get Started"} &rarr;
+            {/* {isSignup ? "Login" : "Get Started"} &rarr; */}
+            {isSignup ? "Join the Waitlist" : "Get Started"}
+            &rarr;
           </Link>
 
           <button
@@ -83,7 +85,9 @@ export default function Navbar() {
             className="btn-primary nav-mobile-cta"
             onClick={closeMobileMenu}
           >
-            {isSignup ? "Login" : "Get Started"} &rarr;
+            {isSignup ? "Join the Waitlist" : "Get Started"}
+            &rarr;
+            {/* {isSignup ? "Login" : "Get Started"} &rarr; */}
           </Link>
         </div>
       </div>
