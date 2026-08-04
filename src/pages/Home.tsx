@@ -101,7 +101,7 @@ export default function Home() {
                 </div>
               ) : (
                 <form className="waitlist-form" onSubmit={handleSubmit}>
-                  <div className="waitlist-input-wrap">
+                  <div className="waitlist-input-wrap" style={{ marginTop: "12px" }}>
                     <span className="waitlist-input-icon">
                       <svg
                         width="18"
