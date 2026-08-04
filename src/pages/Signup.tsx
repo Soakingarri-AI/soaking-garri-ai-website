@@ -22,25 +22,35 @@ const leftFeatures = [
 ];
 
 export default function Signup() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError("");
 
     try {
-      await fetch("https://formsubmit.co/soakingarri@gmail.com", {
+      const response = await fetch("/api/submit-email", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
-        body: new URLSearchParams({ email }),
+        body: JSON.stringify({ name, email }),
       });
-    } catch (error) {
-      console.error("Form submission error:", error);
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+      console.error("Form submission error:", err);
+      return;
     }
 
     setSubmitted(true);
+    setName("");
     setEmail("");
   };
   // const [form, setForm] = useState({
@@ -128,6 +138,31 @@ export default function Signup() {
                               strokeLinecap="round"
                               strokeLinejoin="round"
                             >
+                              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                              <circle cx="12" cy="7" r="4" />
+                            </svg>
+                          </span>
+                          <input
+                            type="text"
+                            name="name"
+                            placeholder="Your full name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                          />
+                        </div>
+                        <div className="waitlist-input-wrap" style={{ marginTop: "12px" }}>
+                          <span className="waitlist-input-icon">
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
                               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                               <polyline points="22,6 12,13 2,6" />
                             </svg>
@@ -141,7 +176,12 @@ export default function Signup() {
                             required
                           />
                         </div>
-                        <button type="submit" className="btn-waitlist">
+                        {error && (
+                          <p style={{ color: "#f87171", fontSize: "13px", marginTop: "8px", textAlign: "center" }}>
+                            {error}
+                          </p>
+                        )}
+                        <button type="submit" className="btn-waitlist" style={{ marginTop: "12px" }}>
                           Join Waitlist
                         </button>
                       </form>
