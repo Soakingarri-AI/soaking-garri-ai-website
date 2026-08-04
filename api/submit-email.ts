@@ -1,10 +1,11 @@
-export default async function handler(req: Request, res: Response) {
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const body = (await req.json()) as { name?: string; email?: string };
-  const { name, email } = body;
+  const { name, email } = req.body as { name?: string; email?: string };
 
   if (!name || !email) {
     return res.status(400).json({ error: 'Name and email are required' });
@@ -56,6 +57,7 @@ export default async function handler(req: Request, res: Response) {
 
     return res.status(200).json({ success: true });
   } catch (error) {
+    console.error('Handler error:', error);
     return res.status(500).json({ error: 'Failed to send email' });
   }
 }
