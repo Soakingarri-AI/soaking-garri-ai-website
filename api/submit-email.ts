@@ -42,18 +42,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.error('Resend error:', resendError);
     }
 
-    const formsubmitResponse = await fetch('https://formsubmit.co/el/yanoto', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({ name, email, _captcha: 'false' }),
-    });
+   const notifyResponse = await fetch('https://api.resend.com/emails', {
+  method: 'POST',
+  headers: {
+    Authorization: `Bearer ${resendApiKey}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    from: 'SoakinGarri AI <hello@soakingarri.com>',
+    to: 'soakingarri@gmail.com', // wherever signups should land
+    subject: 'New Waitlist Signup',
+    html: `<p>New signup:</p><p>Name: ${name}</p><p>Email: ${email}</p>`,
+  }),
+});
 
-    if (!formsubmitResponse.ok) {
-      const formsubmitError = await formsubmitResponse.text();
-      console.error('Formsubmit error:', formsubmitError);
-    }
+if (!notifyResponse.ok) {
+  const notifyError = await notifyResponse.text();
+  console.error('Notify error:', notifyError);
+}
 
     return res.status(200).json({ success: true });
   } catch (error) {
