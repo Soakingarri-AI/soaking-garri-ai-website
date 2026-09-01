@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import FadeInSection from "../components/FadeInSection";
+import { SIGNUP_URL } from "../constants/links";
+import "../index2.css";
 
 const features = [
   {
@@ -55,12 +57,17 @@ export default function Home() {
                 understanding.
               </p>
               <div className="hero-cta">
-                <Link to="#features" className="btn-emerald">
+                <Link to="/features" className="btn-emerald">
                   Explore the features
                 </Link>
-                <Link to="/signup" className="btn-primary">
+                <a
+                  href={SIGNUP_URL}
+                  className="btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Get Started &rarr;
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -169,13 +176,15 @@ export default function Home() {
 
           <FadeInSection delay={300}>
             <div className="feature-cta-row">
-              <Link
-                to="/signup"
+              <a
+                href={SIGNUP_URL}
                 className="btn-primary"
                 style={{ padding: "14px 48px", fontSize: "16px" }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Get Started &rarr;
-              </Link>
+              </a>
             </div>
           </FadeInSection>
         </div>

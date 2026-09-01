@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SIGNUP_URL } from '../constants/links';
 import FadeInSection from '../components/FadeInSection';
 
 const plans = [
@@ -15,7 +16,7 @@ const plans = [
       { label: 'Real-time Analytics', enabled: false },
     ],
     cta: 'Get Started',
-    ctaTo: '/signup',
+    ctaTo: SIGNUP_URL,
     featured: false,
   },
   {
@@ -31,7 +32,7 @@ const plans = [
       { label: 'API Access', enabled: true },
     ],
     cta: 'Start Free Trial',
-    ctaTo: '/signup',
+    ctaTo: SIGNUP_URL,
     featured: true,
     badge: 'RECOMMENDED',
   },
@@ -119,13 +120,25 @@ export default function Pricing() {
                     ))}
                   </ul>
 
-                  <Link
-                    to={plan.ctaTo}
-                    className={plan.featured ? 'btn-primary' : 'btn-outline'}
-                    style={{ display: 'block', textAlign: 'center', padding: '13px' }}
-                  >
-                    {plan.cta}
-                  </Link>
+                  {plan.ctaTo.startsWith('http') ? (
+                    <a
+                      href={plan.ctaTo}
+                      className={plan.featured ? 'btn-primary' : 'btn-outline'}
+                      style={{ display: 'block', textAlign: 'center', padding: '13px' }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {plan.cta}
+                    </a>
+                  ) : (
+                    <Link
+                      to={plan.ctaTo}
+                      className={plan.featured ? 'btn-primary' : 'btn-outline'}
+                      style={{ display: 'block', textAlign: 'center', padding: '13px' }}
+                    >
+                      {plan.cta}
+                    </Link>
+                  )}
                 </div>
               </FadeInSection>
             ))}

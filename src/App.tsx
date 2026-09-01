@@ -3,8 +3,10 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import './index.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import Home2 from './pages/home2';
+import ComingSoon from './pages/Home';
 import About from './pages/About';
+import Features from './pages/Features';
 import Pricing from './pages/Pricing';
 import Help from './pages/Help';
 import Signup from './pages/Signup';
@@ -55,8 +57,10 @@ function AppLayout() {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home2 />} />
+          <Route path="/coming-soon" element={<ComingSoon />} />
           <Route path="/about" element={<About />} />
+          <Route path="/features" element={<Features />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/help" element={<Help />} />
           <Route path="/signup" element={<Signup />} />

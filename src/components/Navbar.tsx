@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { LOGIN_URL, SIGNUP_URL } from "../constants/links";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,12 +16,12 @@ export default function Navbar() {
 
   const links: { to: string; label: string; external?: boolean }[] = [
     { to: "/", label: "Home" },
+    { to: "/features", label: "Features" },
     { to: "/about", label: "About" },
     // { to: "/pricing", label: "Pricing" },
     // { to: "/help", label: "Help" },
   ];
 
-  const isSignup = location.pathname === "/signup";
   const closeMobileMenu = () => setMobileOpen(false);
 
   return (
@@ -48,11 +49,24 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <Link to="/signup" className="btn-primary nav-desktop-cta">
-            {/* {isSignup ? "Login" : "Get Started"} &rarr; */}
-            {isSignup ? "Join the Waitlist" : "Get Started"}
-            &rarr;
-          </Link>
+          <div className="nav-desktop-cta nav-auth-actions">
+            <a
+              href={LOGIN_URL}
+              className="nav-login-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Login
+            </a>
+            <a
+              href={SIGNUP_URL}
+              className="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Started &rarr;
+            </a>
+          </div>
 
           <button
             className="nav-toggle"
@@ -80,15 +94,24 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <Link
-            to="/signup"
-            className="btn-primary nav-mobile-cta"
+          <a
+            href={LOGIN_URL}
+            className="btn-emerald nav-mobile-cta"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={closeMobileMenu}
           >
-            {isSignup ? "Join the Waitlist" : "Get Started"}
-            &rarr;
-            {/* {isSignup ? "Login" : "Get Started"} &rarr; */}
-          </Link>
+            Login
+          </a>
+          <a
+            href={SIGNUP_URL}
+            className="btn-primary nav-mobile-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMobileMenu}
+          >
+            Get Started &rarr;
+          </a>
         </div>
       </div>
     </nav>

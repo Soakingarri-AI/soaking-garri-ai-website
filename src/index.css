@@ -239,6 +239,26 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
 }
 
+.nav-auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-login-link {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-nav);
+  transition: all 0.2s ease;
+}
+
+.nav-login-link:hover {
+  color: var(--text-primary);
+  background: var(--glass);
+}
+
 .nav-links a,
 .nav-mobile-links a {
   padding: 7px 14px;
