@@ -83,15 +83,20 @@ export default function Home() {
       </section>
 
       {/* ===== TRUSTED BY ===== */}
-      <FadeInSection>
+      {/* <FadeInSection>
         <section className="trusted-section">
           <div className="trusted-marquee">
             <div className="trusted-track">
-              {/* First set */}
+              
+              
+              <span className="trusted-logo-item">
+                <img src="/sologo.png" alt="Booksy" />
+              </span>
 
               <span className="trusted-logo-item">
                 <img src="/Booksy.png" alt="Booksy" />
               </span>
+              
               <span className="trusted-logo-item">
                 <img src="/NYU.png" alt="NYU" />
               </span>
@@ -104,7 +109,9 @@ export default function Home() {
               <span className="trusted-logo-item">
                 <img src="/university.png" alt="University of Minnesota" />
               </span>
-              {/* Duplicate set for seamless loop */}
+              <span className="trusted-logo-item">
+                <img src="/sologo.png" alt="Booksy" />
+              </span>
               <span className="trusted-logo-item">
                 <img src="/Booksy.png" alt="Booksy" />
               </span>
@@ -126,7 +133,7 @@ export default function Home() {
             Trusted by innovative teams worldwide
           </span>
         </section>
-      </FadeInSection>
+      </FadeInSection> */}
 
       {/* ===== FEATURES ===== */}
       <section id="features" className="features-section">

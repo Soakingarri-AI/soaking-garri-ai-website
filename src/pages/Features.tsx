@@ -14,10 +14,10 @@ export default function Features() {
           <FadeInSection>
             <div className="features-hero-copy">
               <span className="features-eyebrow">Inside the app</span>
-              <h1>
+              {/* <h1>
                 One prompt box.{" "}
                 <span className="gradient-text">Six specialist tools.</span>
-              </h1>
+              </h1> */}
               <p>
                 Every SoakinGarri AI tool lives behind the same composer. Ask a
                 question outright, or hand it to the tool built for the job.

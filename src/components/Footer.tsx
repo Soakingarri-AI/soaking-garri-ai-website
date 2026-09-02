@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const footerLinks = {
   Company: [
     { label: "About Us", to: "/about" },
+    {label:"Features", to:"/features"},
     // { label: "Careers", to: "#" },
   ],
   // Product: [
