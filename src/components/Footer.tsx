@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
-const footerLinks = {
+const footerLinks: Record<string, { label: string; to: string }[]> = {
   Company: [
     { label: "About Us", to: "/about" },
-    {label:"Features", to:"/features"},
-    // { label: "Careers", to: "#" },
+    { label: "Home", to: "/" },
   ],
-  // Product: [
-  //   { label: "Pricing", to: "/pricing" },
-  //   { label: "API", to: "#" },
-  // ],
+  Product: [
+    // { label: "Pricing", to: "/pricing" },
+    // { label: "API", to: "#" },
+    { label: "Features", to: "/features" },
+  ],
   Legal: [
     { label: "Privacy Policy", to: "/privacy" },
     { label: "Terms", to: "/terms" },
@@ -26,19 +26,14 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <div className="nav-logo" style={{ marginBottom: "12px" }}>
-              <div className="">
-                <Link to="/" className="nav-logo">
-                  <div className="nav-logo-box">
-                    <img src="/sologo.png" alt="Soakingarri AI" />
-                  </div>
-                </Link>
+            <Link to="/" className="nav-logo">
+              <div className="nav-logo-box">
+                <img src="/sologo.png" alt="Soakingarri AI" />
               </div>
-            </div>
+            </Link>
             <p>
-              The Knowledge Starship.
-              <br />
-              Precision in Intelligence.
+              &copy; {new Date().getFullYear()} Soakingarri AI. Precision in
+              Intelligence.
             </p>
           </div>
 
@@ -54,18 +49,6 @@ export default function Footer() {
               </ul>
             </div>
           ))}
-        </div>
-
-        <div className="footer-bottom">
-          <span>
-            © {new Date().getFullYear()} Soakingarri AI. Precision in
-            Intelligence.
-          </span>
-          <div className="footer-bottom-links">
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/terms">Terms of Service</Link>
-            {/* <a href="#">Cookie Policy</a> */}
-          </div>
         </div>
       </div>
     </footer>

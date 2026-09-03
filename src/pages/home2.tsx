@@ -6,21 +6,21 @@ import "../index2.css";
 const features = [
   {
     title: "Welcome to Soakingarri AI",
-    desc: "Your intelligent companion for Business, Finance, Learning, and Productivity.",
+    desc: "The intelligent assistant made just for you.",
     img: "/africanstatue.png",
     glow: "rgba(59,130,246,0.3)",
     glowColor: "#3b82f6",
   },
   {
-    title: "Smarter Finance",
-    desc: "Track expenses, budgets, and business growth with AI.",
+    title: " Build machines with InfiniteParts",
+    desc: "Build the machines that build the machines, with easy to build components.",
     img: "/africanstatue.png",
     glow: "rgba(245,158,11,0.3)",
     glowColor: "#F59E0B",
   },
   {
     title: "Built for Africa",
-    desc: "Understands local business and African realities.",
+    desc: "Designed to understand you better.",
     img: "/africanstatue.png",
     glow: "rgba(16,185,129,0.3)",
     glowColor: "#10B981",
@@ -39,7 +39,7 @@ export default function Home() {
               <h1 className="hero-title">
                 Welcome to <span className="gradient-text">SOAKINGARRI AI</span>
                 <br />
-                The Knowledge Starship
+                Innovation in action.
               </h1>
               <p className="hero-desc">
                 Step into a new era of digital intelligence where artificial

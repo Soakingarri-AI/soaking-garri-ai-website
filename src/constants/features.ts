@@ -35,7 +35,7 @@ export const FEATURE_TOOLS: FeatureTool[] = [
     ],
   },
   {
-    pill: "Memer",
+    pill: "Meme",
     title: "Meme Generator",
     tagline: "Shareable culture, in seconds",
     icon: Image,

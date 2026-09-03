@@ -47,17 +47,8 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 
-  /* Background image setup */
-  background-image:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.72) 100%),
-    url('/newbg.png');
-  background-color: #050505;
-  /* fallback while image loads */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* this is what makes it feel "behind everything" as you scroll */
+  /* Flat black canvas — the twinkling stars in .stars-bg sit on top of it */
+  background: #000000;
   min-height: 100vh;
 }
 
@@ -107,30 +98,18 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(1px 1px at 30% 70%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
-    radial-gradient(1px 1px at 50% 40%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
-    radial-gradient(2px 2px at 70% 90%, rgba(255, 255, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(1px 1px at 90% 10%, rgba(255, 255, 255, 1) 0%, transparent 100%),
-    radial-gradient(2px 2px at 15% 55%, rgba(245, 158, 11, 0.8) 0%, transparent 100%),
-    radial-gradient(2px 2px at 65% 25%, rgba(16, 185, 129, 0.7) 0%, transparent 100%),
-    radial-gradient(1px 1px at 80% 60%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(1px 1px at 25% 85%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
-    radial-gradient(1px 1px at 45% 15%, rgba(255, 255, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(2px 2px at 55% 75%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 35% 35%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(2px 2px at 75% 45%, rgba(245, 158, 11, 0.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 5% 95%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
-    radial-gradient(1px 1px at 95% 5%, rgba(255, 255, 255, 0.9) 0%, transparent 100%);
-  background-size: 600px 600px;
-  animation: twinkle 3s ease-in-out infinite alternate;
+  /* Scattered X-shaped sparkles, drawn as a tiled SVG so they stay crisp at any size */
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='620'%20height='620'%20viewBox='0%200%20620%20620'%3E%3Cpath%20d='M166%20416%20L178%20428%20M166%20428%20L178%20416'%20stroke='%23ffffff'%20stroke-width='1.7'%20stroke-linecap='round'%20opacity='0.28'/%3E%3Cpath%20d='M558%20106%20L566%20114%20M558%20114%20L566%20106'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.45'/%3E%3Cpath%20d='M528.5%20228.5%20L535.5%20235.5%20M528.5%20235.5%20L535.5%20228.5'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.28'/%3E%3Cpath%20d='M454%20438%20L462%20446%20M454%20446%20L462%20438'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.28'/%3E%3Cpath%20d='M103%20575%20L113%20585%20M103%20585%20L113%20575'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.55'/%3E%3Cpath%20d='M74%20417%20L84%20427%20M74%20427%20L84%20417'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.28'/%3E%3Cpath%20d='M306.5%20439.5%20L315.5%20448.5%20M306.5%20448.5%20L315.5%20439.5'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.35'/%3E%3Cpath%20d='M594%20325%20L602%20333%20M594%20333%20L602%20325'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.7'/%3E%3Cpath%20d='M392%20110%20L402%20120%20M392%20120%20L402%20110'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.7'/%3E%3Cpath%20d='M519%20555%20L529%20565%20M519%20565%20L529%20555'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.55'/%3E%3Cpath%20d='M318%20266%20L330%20278%20M318%20278%20L330%20266'%20stroke='%23ffffff'%20stroke-width='1.7'%20stroke-linecap='round'%20opacity='0.35'/%3E%3Cpath%20d='M471%20306%20L483%20318%20M471%20318%20L483%20306'%20stroke='%23ffffff'%20stroke-width='1.7'%20stroke-linecap='round'%20opacity='0.7'/%3E%3Cpath%20d='M72%20327%20L80%20335%20M72%20335%20L80%20327'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.7'/%3E%3Cpath%20d='M184%20131%20L196%20143%20M184%20143%20L196%20131'%20stroke='%23ffffff'%20stroke-width='1.7'%20stroke-linecap='round'%20opacity='0.55'/%3E%3Cpath%20d='M232.5%20303.5%20L239.5%20310.5%20M232.5%20310.5%20L239.5%20303.5'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.35'/%3E%3Cpath%20d='M95.5%20183.5%20L110.5%20198.5%20M95.5%20198.5%20L110.5%20183.5'%20stroke='%23ffffff'%20stroke-width='1.7'%20stroke-linecap='round'%20opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 620px 620px;
+  background-repeat: repeat;
+  animation: twinkle 4s ease-in-out infinite alternate;
 }
 
 .stars-bg::after {
-  background-size: 400px 400px;
-  animation: twinkle 5s ease-in-out infinite alternate-reverse;
-  opacity: 0.8;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='430'%20height='430'%20viewBox='0%200%20430%20430'%3E%3Cpath%20d='M224.5%20363.5%20L233.5%20372.5%20M224.5%20372.5%20L233.5%20363.5'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.55'/%3E%3Cpath%20d='M256.5%20121.5%20L267.5%20132.5%20M256.5%20132.5%20L267.5%20121.5'%20stroke='%23ffffff'%20stroke-width='1.7'%20stroke-linecap='round'%20opacity='0.55'/%3E%3Cpath%20d='M268.5%20280.5%20L277.5%20289.5%20M268.5%20289.5%20L277.5%20280.5'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.35'/%3E%3Cpath%20d='M16.5%20198.5%20L23.5%20205.5%20M16.5%20205.5%20L23.5%20198.5'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.7'/%3E%3Cpath%20d='M47.5%2086.5%20L60.5%2099.5%20M47.5%2099.5%20L60.5%2086.5'%20stroke='%23ffffff'%20stroke-width='1.7'%20stroke-linecap='round'%20opacity='0.35'/%3E%3Cpath%20d='M366%2032%20L376%2042%20M366%2042%20L376%2032'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.55'/%3E%3Cpath%20d='M177.5%20285.5%20L184.5%20292.5%20M177.5%20292.5%20L184.5%20285.5'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.55'/%3E%3Cpath%20d='M342%20198%20L350%20206%20M342%20206%20L350%20198'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.28'/%3E%3Cpath%20d='M105.5%20350.5%20L114.5%20359.5%20M105.5%20359.5%20L114.5%20350.5'%20stroke='%23ffffff'%20stroke-width='1.4'%20stroke-linecap='round'%20opacity='0.28'/%3E%3C/svg%3E");
+  background-size: 430px 430px;
+  animation: twinkle 6.5s ease-in-out infinite alternate-reverse;
+  opacity: 0.75;
 }
 
 @keyframes twinkle {
@@ -2009,22 +1988,30 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: rgba(0, 0, 0, 0.3);
+  background: #0A090A;
   border-top: 1px solid var(--border);
-  padding: 56px 0 32px;
+  padding: 48px 0 44px;
+  /* keep the footer above the fixed .stars-bg layer */
+  position: relative;
+  z-index: 1;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr repeat(4, auto);
-  gap: 60px;
-  margin-bottom: 48px;
+  grid-template-columns: 1fr repeat(4, minmax(90px, auto));
+  gap: 48px;
+  align-items: start;
+}
+
+.footer-brand .nav-logo-box {
+  width: 150px;
+  height: 44px;
 }
 
 .footer-brand p {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-muted);
-  margin-top: 35px;
+  margin-top: 16px;
   line-height: 1.6;
 }
 
@@ -2051,30 +2038,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-col ul li a:hover {
-  color: var(--text-primary);
-}
-
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 28px;
-  border-top: 1px solid var(--border);
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.footer-bottom-links {
-  display: flex;
-  gap: 24px;
-}
-
-.footer-bottom-links a {
-  color: var(--text-muted);
-  transition: color 0.2s;
-}
-
-.footer-bottom-links a:hover {
   color: var(--text-primary);
 }
 
@@ -2121,7 +2084,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 
   .help-grid {
@@ -2248,8 +2216,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 
   .trusted-logos {
