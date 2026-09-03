@@ -7,21 +7,21 @@ const features = [
   {
     title: "Welcome to Soakingarri AI",
     desc: "Your intelligent companion for Business, Finance, Learning, and Productivity.",
-    img: "/robot-welcome.png",
+    img: "/africanstatue.png",
     glow: "rgba(59,130,246,0.3)",
     glowColor: "#3b82f6",
   },
   {
     title: "Smarter Finance",
     desc: "Track expenses, budgets, and business growth with AI.",
-    img: "/robot-finance.png",
+    img: "/africanstatue.png",
     glow: "rgba(245,158,11,0.3)",
     glowColor: "#F59E0B",
   },
   {
     title: "Built for Africa",
     desc: "Understands local business and African realities.",
-    img: "/robot-africa.png",
+    img: "/africanstatue.png",
     glow: "rgba(16,185,129,0.3)",
     glowColor: "#10B981",
   },
@@ -74,7 +74,7 @@ export default function Home() {
             {/* RIGHT: Phone mockup */}
             <div className="hero-image-wrap">
               <img
-                src="/hero-phone.png"
+                src="/blackhand.png"
                 alt="SOAKINGARRI AI Chat Interface on mobile"
               />
             </div>
