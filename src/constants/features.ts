@@ -5,7 +5,6 @@ import {
   Puzzle,
   Settings,
   Users,
-  Wallet,
   type LucideIcon,
 } from "lucide-react";
 
@@ -21,6 +20,19 @@ export type FeatureTool = {
 };
 
 export const FEATURE_TOOLS: FeatureTool[] = [
+  {
+    pill: "Ask",
+    title: "Ask SoakinGarri",
+    tagline: "Your everyday assistant, tuned to African realities",
+    icon: MessageSquare,
+    accent: "#10B981",
+    desc: "Your everyday AI assistant with deep knowledge of Africa's history, culture, science, business, technology, and education. Ask questions, solve problems, learn new skills, conduct research, and get intelligent guidance tailored to African realities.",
+    points: [
+      "History, culture, science, business and technology",
+      "Research, problem solving and skill building",
+      "Answers grounded in African context",
+    ],
+  },
   {
     pill: "Factorizer",
     title: "Factorizer",
@@ -45,19 +57,6 @@ export const FEATURE_TOOLS: FeatureTool[] = [
       "Culturally aware captions and templates",
       "Instant export for social platforms",
       "Built on the SoakinGarri meme engine",
-    ],
-  },
-  {
-    pill: "Finance",
-    title: "Finance",
-    tagline: "Track, budget, and grow with AI",
-    icon: Wallet,
-    accent: "#10B981",
-    desc: "Track expenses, budgets, and business growth with AI that understands local realities — informal income, multiple currencies, and the cash-flow patterns of African small businesses.",
-    points: [
-      "Expense tracking and budget planning",
-      "Business growth and cash-flow insight",
-      "Guidance grounded in local market conditions",
     ],
   },
   {
@@ -100,13 +99,6 @@ export const FEATURE_TOOLS: FeatureTool[] = [
     ],
   },
 ];
-
-/** The always-on assistant behind the composer itself. */
-export const ASK_TOOL = {
-  title: "Ask SoakinGarri",
-  icon: MessageSquare,
-  desc: "Your everyday AI assistant with deep knowledge of Africa's history, culture, science, business, technology, and education. Ask questions, solve problems, learn new skills, conduct research, and get intelligent guidance tailored to African realities.",
-};
 
 export type DiscoveryCard = {
   tag: string;

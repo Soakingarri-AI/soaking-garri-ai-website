@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Mic, Plus, Send, Sparkles } from "lucide-react";
 import FadeInSection from "../components/FadeInSection";
 import { SIGNUP_URL } from "../constants/links";
-import { ASK_TOOL, DISCOVERY_CARDS, FEATURE_TOOLS } from "../constants/features";
+import { DISCOVERY_CARDS, FEATURE_TOOLS } from "../constants/features";
 import "../index2.css";
 
 export default function Features() {
@@ -74,21 +74,6 @@ export default function Features() {
                   ))}
                 </div>
               </div>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
-      {/* ===== THE ASSISTANT ITSELF ===== */}
-      <section className="features-ask">
-        <div className="container">
-          <FadeInSection>
-            <div className="features-ask-card">
-              <div className="tool-icon">
-                <ASK_TOOL.icon size={26} />
-              </div>
-              <h2>{ASK_TOOL.title}</h2>
-              <p>{ASK_TOOL.desc}</p>
             </div>
           </FadeInSection>
         </div>
