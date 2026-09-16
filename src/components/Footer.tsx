@@ -5,11 +5,11 @@ const footerLinks: Record<string, { label: string; to: string }[]> = {
     { label: "About Us", to: "/about" },
     { label: "Home", to: "/" },
   ],
-  Product: [
-    // { label: "Pricing", to: "/pricing" },
-    // { label: "API", to: "#" },
-    { label: "Features", to: "/features" },
-  ],
+  // Product: [
+  //   { label: "Pricing", to: "/pricing" },
+  //   { label: "API", to: "#" },
+  //   { label: "Features", to: "/features" },
+  // ],
   Legal: [
     { label: "Privacy Policy", to: "/privacy" },
     { label: "Terms", to: "/terms" },

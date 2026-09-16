@@ -101,7 +101,7 @@ export default function Home() {
                 </div>
               ) : (
                 <form className="waitlist-form" onSubmit={handleSubmit}>
-                  <div className="waitlist-input-wrap" style={{ marginTop: "12px" }}>
+                  <div className="waitlist-input-wrap">
                     <span className="waitlist-input-icon">
                       <svg
                         width="18"
@@ -126,7 +126,7 @@ export default function Home() {
                       required
                     />
                   </div>
-                  <div className="waitlist-input-wrap" style={{ marginTop: "12px" }}>
+                  <div className="waitlist-input-wrap">
                     <span className="waitlist-input-icon">
                       <svg
                         width="18"
@@ -151,12 +151,12 @@ export default function Home() {
                       required
                     />
                   </div>
-                  {error && (
-                    <p style={{ color: "#f87171", fontSize: "13px", marginTop: "8px", textAlign: "center" }}>
+                   {error && (
+                    <p className="waitlist-error">
                       {error}
                     </p>
                   )}
-                  <button type="submit" className="btn-waitlist" style={{ marginTop: "12px" }}>
+                  <button type="submit" className="btn-waitlist waitlist-submit">
                     Join Waitlist
                   </button>
                 </form>
@@ -200,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* ===== TOOLS ===== */}
-      <section className="tools-section">
+      {/* <section className="tools-section">
         <div className="container">
           <FadeInSection>
             <div className="section-header">
@@ -229,7 +229,7 @@ export default function Home() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ===== LAUNCHING ===== */}
       <section className="launching-section">

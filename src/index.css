@@ -2232,3 +2232,19 @@ h1, h2, h3, h4, h5, h6 {
     transform: none;
   }
 }
+
+/* ===== WAITLIST FORM STYLES ===== */
+.waitlist-input-wrap {
+  margin-top: 12px;
+}
+
+.waitlist-error {
+  color: #f87171;
+  font-size: 13px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.waitlist-submit {
+  margin-top: 12px;
+}

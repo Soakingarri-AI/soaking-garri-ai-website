@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import FadeInSection from "../components/FadeInSection";
-import { SIGNUP_URL } from "../constants/links";
+// import { SIGNUP_URL } from "../constants/links";
 
 export default function About() {
   return (
@@ -49,11 +49,12 @@ export default function About() {
 
               <FadeInSection delay={200}>
                 <div className="hero-cta" style={{ marginTop: "36px" }}>
-                  <Link to="/features" className="btn-emerald">
+                  {/* <Link to="/features" className="btn-emerald">
                     Explore the features
-                  </Link>
+                  </Link> */}
                   <a
-                    href={SIGNUP_URL}
+                    // href={SIGNUP_URL}
+                    href="/coming-soon"
                     className="btn-primary"
                     target="_blank"
                     rel="noopener noreferrer"

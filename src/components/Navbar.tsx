@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const links: { to: string; label: string; external?: boolean }[] = [
     { to: "/", label: "Home" },
-    { to: "/features", label: "Features" },
+    // { to: "/features", label: "Features" },
     { to: "/about", label: "About" },
     // { to: "/pricing", label: "Pricing" },
     // { to: "/help", label: "Help" },
@@ -50,16 +50,17 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-desktop-cta nav-auth-actions">
-            <a
+            {/* <a
               href={LOGIN_URL}
               className="nav-login-link"
               target="_blank"
               rel="noopener noreferrer"
             >
               Login
-            </a>
+            </a> */}
             <a
-              href={SIGNUP_URL}
+              // href={SIGNUP_URL}
+              href="/coming-soon"
               className="btn-primary"
               target="_blank"
               rel="noopener noreferrer"
@@ -94,7 +95,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <a
+          {/* <a
             href={LOGIN_URL}
             className="btn-emerald nav-mobile-cta"
             target="_blank"
@@ -102,9 +103,10 @@ export default function Navbar() {
             onClick={closeMobileMenu}
           >
             Login
-          </a>
+          </a> */}
           <a
-            href={SIGNUP_URL}
+            // href={SIGNUP_URL}
+            href="/coming-soon"
             className="btn-primary nav-mobile-cta"
             target="_blank"
             rel="noopener noreferrer"
