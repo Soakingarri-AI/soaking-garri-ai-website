@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { LOGIN_URL, SIGNUP_URL } from "../constants/links";
+// import { LOGIN_URL, SIGNUP_URL } from "../constants/links";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

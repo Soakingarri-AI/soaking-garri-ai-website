@@ -1,47 +1,47 @@
 import { useState } from "react";
 
 import FadeInSection from "../components/FadeInSection";
-import {
-  MessageSquare,
-  Settings,
-  Puzzle,
-  BookOpen,
-  Users,
-  Image,
-} from "lucide-react";
+// import {
+//   MessageSquare,
+//   Settings,
+//   Puzzle,
+//   BookOpen,
+//   Users,
+//   Image,
+// } from "lucide-react";
 
-const tools = [
-  {
-    title: "Ask SoakinGarri",
-    icon: MessageSquare,
-    desc: "Your everyday AI assistant with deep knowledge of Africa's history, culture, science, business, technology, and education. Ask questions, solve problems, learn new skills, conduct research, generate ideas, and get intelligent guidance tailored to African realities and opportunities.",
-  },
-  {
-    title: "Factorizer",
-    icon: Settings,
-    desc: "Turn manufacturing dreams into reality. Factorizer helps entrepreneurs, investors, governments, and businesses understand the technical know how to assemble the machines required to have a fully running factory for different products, from food processing to electronics, to machines and etc. Factorizer provides practical pathways to industrial growth, through small, to medium and large factories.",
-  },
-  {
-    title: "InfiniteParts",
-    icon: Puzzle,
-    desc: "Design and discover machine components with ease. InfiniteParts helps engineers, inventors, manufacturers, and makers generate production-ready parts, explore mechanical designs, and create components suitable for CNC machining, 3D printing, fabrication, and industrial production.",
-  },
-  {
-    title: "ExamFlow",
-    icon: BookOpen,
-    desc: "The intelligent study companion for African students. ExamFlow helps learners prepare for Common Entrance, Junior WAEC, Senior WAEC, NECO, JAMB, and other examinations through practice questions, personalized learning plans, adaptive testing, performance analysis, and exam-focused guidance.",
-  },
-  {
-    title: "AfroSimulator",
-    icon: Users,
-    desc: "Experience dynamic conversations between diverse African perspectives through a simulation of chatbots. AfroSimulator features culturally distinct AI personalities inspired by different African communities, allowing users to explore ideas, cultural viewpoints, and collaborative problem-solving through realistic AI-driven discussions.",
-  },
-  {
-    title: "Meme Generator",
-    icon: Image,
-    desc: "Create funny, shareable contents based on socio-cultural content in seconds. Powered by the SoakinGarri meme engine.",
-  },
-];
+// const tools = [
+//   {
+//     title: "Ask SoakinGarri",
+//     icon: MessageSquare,
+//     desc: "Your everyday AI assistant with deep knowledge of Africa's history, culture, science, business, technology, and education. Ask questions, solve problems, learn new skills, conduct research, generate ideas, and get intelligent guidance tailored to African realities and opportunities.",
+//   },
+//   {
+//     title: "Factorizer",
+//     icon: Settings,
+//     desc: "Turn manufacturing dreams into reality. Factorizer helps entrepreneurs, investors, governments, and businesses understand the technical know how to assemble the machines required to have a fully running factory for different products, from food processing to electronics, to machines and etc. Factorizer provides practical pathways to industrial growth, through small, to medium and large factories.",
+//   },
+//   {
+//     title: "InfiniteParts",
+//     icon: Puzzle,
+//     desc: "Design and discover machine components with ease. InfiniteParts helps engineers, inventors, manufacturers, and makers generate production-ready parts, explore mechanical designs, and create components suitable for CNC machining, 3D printing, fabrication, and industrial production.",
+//   },
+//   {
+//     title: "ExamFlow",
+//     icon: BookOpen,
+//     desc: "The intelligent study companion for African students. ExamFlow helps learners prepare for Common Entrance, Junior WAEC, Senior WAEC, NECO, JAMB, and other examinations through practice questions, personalized learning plans, adaptive testing, performance analysis, and exam-focused guidance.",
+//   },
+//   {
+//     title: "AfroSimulator",
+//     icon: Users,
+//     desc: "Experience dynamic conversations between diverse African perspectives through a simulation of chatbots. AfroSimulator features culturally distinct AI personalities inspired by different African communities, allowing users to explore ideas, cultural viewpoints, and collaborative problem-solving through realistic AI-driven discussions.",
+//   },
+//   {
+//     title: "Meme Generator",
+//     icon: Image,
+//     desc: "Create funny, shareable contents based on socio-cultural content in seconds. Powered by the SoakinGarri meme engine.",
+//   },
+// ];
 
 export default function Home() {
   const [name, setName] = useState("");
