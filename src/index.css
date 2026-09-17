@@ -560,7 +560,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tool-card {
-  background: rgba(30, 41, 59, 0.45);
+  background: #0A090A;
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 28px;
@@ -627,7 +627,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  background: rgba(255, 255, 255, 0.04);
+  background: #0A090A;
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 48px;
@@ -2247,4 +2247,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .waitlist-submit {
   margin-top: 12px;
+}
+/* ===== HOME CONTENT PANELS =====
+   Solid boxes so the twinkling .stars-bg never shows through the copy */
+.content-panel {
+  position: relative;
+  z-index: 1;
+  background: #0A090A;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 44px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.hero-content.content-panel {
+  padding: 48px;
+}
+
+.tools-section .section-header.content-panel {
+  max-width: 800px;
+  margin: 0 auto 52px;
+  padding: 36px 44px;
+}
+
+.waitlist-card.content-panel {
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .content-panel,
+  .hero-content.content-panel,
+  .waitlist-card.content-panel {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .tools-section .section-header.content-panel {
+    padding: 28px 20px;
+  }
 }

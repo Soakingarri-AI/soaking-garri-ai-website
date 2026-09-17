@@ -69,7 +69,7 @@ export default function Pricing() {
         <div className="container">
           <FadeInSection>
             <div className="pricing-hero">
-              <h1>Precision in Intelligence</h1>
+              <h1>Innovation In Action</h1>
               <p>
                 Choose the perfect cognitive framework for your enterprise or personal
                 projects. Scalable AI solutions powered by Soakingarri technology.
