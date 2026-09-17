@@ -1017,6 +1017,46 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
 }
 
+/* The About copy gets a soft scrim rather than a card: a #0A090A wash that is
+   solid behind the text and dissolves into the page at the edges, so the
+   twinkling .stars-bg never runs through the words and no box outline appears. */
+.about-content {
+  position: relative;
+  z-index: 1;
+  padding: 4px 0;
+}
+
+.about-content::before {
+  content: '';
+  position: absolute;
+  inset: -52px -72px;
+  z-index: -1;
+  background: #0A090A;
+  pointer-events: none;
+  /* Two feathered gradients: opaque through the middle, fading out on all
+     four sides. Browsers without mask-composite union them, which only ever
+     covers more, so the text stays readable either way. */
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+/* A thin amber rule leading into the heading, to mark the block without framing it */
+.about-content h1::before {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--amber), transparent);
+  margin-bottom: 20px;
+}
+
 .about-phone-wrap {
   position: relative;
   display: flex;
@@ -2074,6 +2114,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .about-phone-wrap {
     order: 1;
+  }
+
+  .about-content::before {
+    inset: -32px -28px;
   }
 
   .features-grid,
